@@ -3,8 +3,8 @@ from PIL import Image
 import requests
 
 # load image from the IAM database
-url = 'https://fki.tic.heia-fr.ch/static/img/a01-122-02-00.jpg'
-image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
+with open("20150624_135325.jpg", "rb") as f:
+    image = Image.open(f).convert("RGB")
 
 processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
 model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-base-handwritten')
