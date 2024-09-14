@@ -13,7 +13,7 @@ def home():
 @app.route('/ocr', methods=['POST'])
 def ocr():
     url = request.json.get('url')
-    image = Image.open(requests.get(url, stream=True).raw)
+    image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
     start = time.time()
     processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
     model = VisionEncoderDecoderModel.from_pretrained('microsoft/trocr-base-handwritten')
