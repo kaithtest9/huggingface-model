@@ -4,7 +4,7 @@ import requests
 import time
 
 # load image from the IAM database
-with open("20150624_135325.jpg", "rb") as f:
+with open("7f0ccc4e0d3c80095d71002055a03697.jpg", "rb") as f:
     image = Image.open(f).convert("RGB")
 
 start = time.time()
